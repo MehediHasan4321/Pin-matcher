@@ -22,7 +22,21 @@ document.getElementById("calculator").addEventListener("click",(e)=>{
         document.getElementById("calculator-inp").value = newNumber
     }
 })
-
+document.getElementById("submit-btn").addEventListener("click",()=>{
+    const pinGenerateInp = document.getElementById("form-inp").value;
+    const calculatPinInp = document.getElementById("calculator-inp").value;
+    if(pinGenerateInp !== ""){
+        if(pinGenerateInp === calculatPinInp){
+            document.getElementById("match").style.display = "block"
+            document.getElementById("not-match").style.display = "none"
+        }else{
+            document.getElementById("match").style.display = "none"
+            document.getElementById("not-match").style.display = "block"
+        }
+    }else{
+        alert("Plz Generate a Pin")
+    }
+})
 
 
 function generatePin(){
